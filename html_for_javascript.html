@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html_for_javascript</title>
+  </head>
+  <body>
+
+      <!-- Functional heading -->
+
+    <h1 id="hello_world"></h1>
+
+    <!-- Here I'm going to create js onclick effect light; -->
+
+    <button
+      style="
+        cursor: pointer;
+        width: 350px;
+        padding: 5px 20px;
+        background-color: steelblue;
+        color: white;
+        font-size: 25px;
+        border-radius: 20px;
+        font-family: sans-serif;
+        font-weight: bolder;
+        border-bottom: 5px solid rgb(0, 255, 76);
+      "
+      onclick='document.getElementById("light").src="img/light_on.png"'
+    >
+      Turn on the light
+    </button>
+
+    <img
+      id="light"
+      src="img/light-off.png"
+      style="
+        width: 550px;
+        height: 850px;
+        object-fit: cover;
+        background-position: center;
+      "
+    />
+
+    <button
+      style="
+        cursor: pointer;
+        width: 350px;
+        padding: 5px 20px;
+        background-color: steelblue;
+        color: white;
+        font-size: 25px;
+        border-radius: 20px;
+        font-family: sans-serif;
+        font-weight: bolder;
+        border-bottom: 5px solid rgb(0, 255, 76);
+        cursor: pointer;
+      "
+      onclick='document.getElementById("light").src="img/light-off.png"'
+    >
+      Turn off the light
+    </button>
+
+    <p id="demo" style="font-size: 30px;"></p>
+    <p id="check" style="font-size: 30px;"></p>
+    <p id="stack"></p>
+    <h2>JavaScript Objects</h2>
+    <p>An object method is a function definition, 
+        stored as a property value.</p>
+    <p id="demo1"></p>
+    <p id="slice"></p>
+    <h3 id="student"></h3>
+    <button onclick="helloWorld()">Click to see w3school text</button> <!--"replace()"method -->
+    <button onclick="backToPrevious()">Click to see Microsoft</button> <!--"replace()"method -->
+    <h2 id="hello-world">Visit Microsoft.com</h2>  <!--"replace()"method -->
+
+    <!-- "toUpperCase()" method below -->
+    <button onclick="hola()">Click for UpperCase word</button>
+    <button onclick="bokachoda()">Click for LowerCase word</button>
+    <h2 id="makingToUpperCase">I'm Shawn.</h2>
+    <button onclick="Hi()">Click to see 1st two part of the text</button>
+    <button onclick="hablu()">Click to see 3rd part of the text</button>
+    <button onclick="pablo()">Click to see 3rd part of the text</button>
+    <h2 id="hola"></h2>
+    <p id="concat"></p>
+    <p id="noob-coders"></p>
+    <p id="arrays"></p>
+    <!-- <ul>
+      <li>Mango</li>
+      <li>Banana</li>
+      <li>Apple</li>
+      <li>Orange</li>
+    </ul> -->
+    <p id="for-loop"></p>
+    <p id="forEachFunction"></p>
+    <h2 id="drop-for-loop"></h2>
+    <h3 id="dropping-for-looping"></h3>
+    <h4 id="dropped-forEach-function"></h4>
+    <h4 id="last-forEach-function"></h4>
+    <h2 id="subject-in-this-semester"></h2>
+    <button onclick="document.getElementById('again-for-loop').style.display = 'none'">Click me to hide the subject</button> 
+    <h5 id="again-for-loop"></h5>
+    <button onclick="document.getElementById('again-for-loop').style.display = 'block'">Click me to see the subject</button>
+    <h3 id="hello-world-js"></h3>
+    <h3 id="for-each-function-practice"></h3>
+    <h3 id="for-each-function-practices"></h3>
+    <button onclick="myFunctionhello()">Sort the fruits element in descending order</button>
+    <h4 id="sort"></h4>
+    <button onclick="myAscending()">Sort the fruits element in ascending order</button>
+    <button onclick="myFunctionhellos()">Click to sort the object array according to year</button>
+    <h4 id="objectArray"></h4>
+    <button onclick="whatsUppSmart()">Click to see the lowest age smart guy</button>
+    <h4 id="myAge"></h4>
+    <button onclick="seeTopBoy()">Sort me to see ascending order</button>
+    <h4 id="topperBoy"></h4>
+    <button onclick="noCarsLeft()">Sort ascending according to year</button>
+    <h4 id="carsTop"></h4>
+    <button onclick="onlySomeHave()">Sort ascending according to letters</button>
+    <button onclick="sortingNumber()">Sort the student list according to top result</button>
+    <h4 id="topResultOfThisSemester"></h4>
+    <button onclick="alSort()">Sort the list according to letters</button>
+
+    <h2 id="fruitsForNothing"></h2>
+    <!-- <button onclick=" myFruits()">Click me to see sort formet</button> -->
+    <h2 id="bodyWeight"></h2>
+
+    <button onclick="whoTheHell()">Sort in ascending order according to number</button>
+    <h5 id="lastSortForTonight"></h5>
+    <button onclick="nothingToDo()">Sort in ascending order according to word</button>
+
+    <button onclick="worriorsOf()">Click me to Sort this in ascending order according to numbers</button>
+    <h3 id="goodPeopleForHelp"></h3>
+    <button onclick="mostHardestBettle()">Click me to Sort this in ascending order according to word</button>
+
+    <h4 id="notDepend"></h4>
+    <h4 id="awesomeGuys"></h4>
+
+    <h3 id="personDoubleAge"></h3>
+    <p id="topPname"></p>
+    <button onclick="sortMeAscending()">Click me to Sort in ascending order</button>
+    <button onclick="sortDeAscending()">Click me to sort in dscending order</button>
+
+    <h2 id="No"></h2>
+    <h2 id="dis"></h2>
+    <h5 id="Date"></h5>
+    <h6 id="birth-year"></h6>
+
+
+
+
+    <script>
+
+      //My Date of Birth
+      {
+        const date_of_birth_year_month = new Date(99, 11, 22, 10, 30, 59, 0);
+        document.getElementById("birth-year").innerHTML = date_of_birth_year_month;
+      }
+
+      {
+        const d = new Date();
+        document.getElementById("Date").innerHTML = d;
+      }
+
+      //Sorting object Array
+      {
+        const lastForTonight = [
+          {country:"Bangladesh indipendent in ", year:1971},
+          {country:"Afganistan indipendent in ", year:1962},
+          {country:"India indipendent in ", year:1947}
+        ];
+        countryNearBy();
+        function whoTheHell(){
+          lastForTonight.sort(function(a,b){
+            return a.year - b.year;
+          });
+          countryNearBy();
+        };
+        function nothingToDo(){
+          lastForTonight.sort(function(a,b){
+            let x = a.country.toLowerCase();
+            let y = b.country.toLowerCase();
+            if (x < y){return -1};
+            if (x > y){return 1};
+            return 0;
+          });
+          countryNearBy();
+        };
+        function countryNearBy(){
+          document.getElementById("lastSortForTonight").innerHTML =
+          lastForTonight[0].country + "" + lastForTonight[0].year + "<br>" +
+          lastForTonight[1].country + "" + lastForTonight[1].year + "<br>" +
+          lastForTonight[2].country + "" + lastForTonight[2].year
+        }
+      }
+
+
+      {
+        const never_give_up = [
+          {country:"Bangladesh had great worriors,they fight with Pakistani army more than 9months in ", year:1971},
+          {country:"Afganistan have great worriors,they fight with American army more than 20years and win the battle ", year:2021},
+          {country:"India had some great worriors,they fight with British army more than 2months in ", year:1947} 
+        ];
+        some_great_story();
+        function worriorsOf(){
+          never_give_up.sort(function(a,b){
+            return a.year - b.year;
+          });
+          some_great_story();
+        };
+        function mostHardestBettle(){
+          never_give_up.sort(function(a,b){
+            let x = a.country.toLowerCase();
+            let y = b.country.toLowerCase();
+            if (x < y){return -1};
+            if (x > y){return 1};
+            return 0;
+          });
+          some_great_story();
+        }
+        function some_great_story(){
+          document.getElementById("goodPeopleForHelp").innerHTML = 
+          never_give_up[0].country + "" + never_give_up[0].year + "<br>" +
+          never_give_up[1].country + "" + never_give_up[1].year + "<br>" +
+          never_give_up[2].country + "" + never_give_up[2].year
+        };
+      }
+
+
+      {
+        const resultsOf = [
+          {name:"Zahin got in this semester ", marks: 82, conslusinon:" numbers in Math."},
+          {name:"Shawn got in this semester ", marks: 96, conslusinon:" numbers in Math."},
+          {name:"Ashik got in this semester ", marks: 93, conslusinon:" numbers in Math."}
+        ];
+        topperOfThisSemester();
+        function sortingNumber(){
+          resultsOf.sort(function(a,b){
+            return a.marks - b.marks;
+          });
+          topperOfThisSemester();
+        }
+        function alSort(){
+          resultsOf.sort(function(a,b){
+            let x = a.name.toLowerCase();
+            let y = b.name.toLowerCase();
+            if (x < y){return -1};
+            if (x > y){return 1};
+            return 0;
+          });
+          topperOfThisSemester();
+        }
+        function topperOfThisSemester(){
+          document.getElementById("topResultOfThisSemester").innerHTML=
+          resultsOf[0].name + "" + resultsOf[0].marks + "" + resultsOf[0].conslusinon + "<br>"+
+          resultsOf[1].name + "" + resultsOf[1].marks + "" + resultsOf[1].conslusinon + "<br>"+
+          resultsOf[2].name + "" + resultsOf[2].marks + "" + resultsOf[2].conslusinon 
+        }
+      }
+      {
+        //sorting according to year 
+        const cars = [
+            {type:"Lamborgini ", year:2016},
+            {type:"Bmw ", year:2001},
+            {type:"Audi ", year:2010}
+          ]; 
+          carsRow();
+          function noCarsLeft(){
+            cars.sort(function(a,b){
+             return a.year - b.year;
+            });
+            carsRow();
+          };
+          function onlySomeHave(){
+            cars.sort(function(a,b){
+              let x = a.type.toLowerCase();
+              let y = b.type.toLowerCase();
+              if (x < y){return -1};
+              if (x > y){return 1};
+              return 0;
+            });
+            carsRow();
+          }
+          function carsRow(){
+            document.getElementById("carsTop").innerHTML =
+            cars[0].type + "" + cars[0].year + "<br>" +
+            cars[1].type + "" + cars[1].year + "<br>"+
+            cars[2].type + "" + cars[2].year
+          };
+      }
+      {
+        const hopeForGood = [
+          {name:"Shain is the 3rd boy of his class and his roll number is ", rollNumber:3},
+          {name:"Shawn is the 1st boy of his class and his roll number is ", rollNumber:1},
+          {name:"Unknown is the 2nd boy of their class and his roll number is ", rollNumber:2}
+        ];
+        topperOfClass();
+        function seeTopBoy(){
+          hopeForGood.sort(function(a,b){
+            return a.rollNumber - b.rollNumber;
+          });
+          topperOfClass();
+        };
+        function topperOfClass(){
+          document.getElementById("topperBoy").innerHTML = 
+          hopeForGood[0].name + "" + hopeForGood[0].rollNumber + "<br>"+
+          hopeForGood[1].name + "" + hopeForGood[1].rollNumber + "<br>"+
+          hopeForGood[2].name + "" + hopeForGood[2].rollNumber
+        };
+      }
+      {
+        const cars = [
+        {type:"Volvo", year:2016},
+        {type:"Saab", year:2001},
+        {type:"BMW", year:2010}
+        ];
+        displayCars();
+        function myFunctionhellos(){
+          cars.sort(function(a,b){
+            return a.year - b.year;
+          });
+          displayCars();
+        } ;
+        function displayCars() {
+          document.getElementById("objectArray").innerHTML=
+          cars[0].type + " " + cars[0].year +"<br>"+
+          cars[1].type + "" +cars[1].year + "<br>"+
+          cars[2].type + "" + cars[2].year;      
+        }
+      }
+
+      //Array object sorting:
+      {
+        const personTopAndAge = [
+          {name:"Shain", age:23},
+          {name:"Shawn", age:21},
+          {name:"Unknown", age:25}
+        ];
+        displayResult();
+        function whatsUppSmart(){
+          personTopAndAge.sort(function(a,b){
+            return a.age - b.age;
+          });
+          displayResult();
+        };
+
+        function displayResult(){
+          document.getElementById("myAge").innerHTML =
+          personTopAndAge[0].name + " " + personTopAndAge[0].age + "<br>" +
+          personTopAndAge[1].name + " " + personTopAndAge[1].age + "<br>" +
+          personTopAndAge[2].name + " " + personTopAndAge[2].age;
+        };
+      }
+
+      {
+        const fruits = ["Banana","Orange","Apple","Mango"];
+        document.getElementById("sort").innerHTML = fruits;
+
+        function myFunctionhello(){
+          //first sort the array
+          fruits.sort();
+          //Then reverse it
+          fruits.reverse();
+          document.getElementById("sort").innerHTML = fruits;  
+        }
+
+        function myAscending() {
+          fruits.sort();
+          document.getElementById("sort").innerHTML = fruits;  
+        }
+      }
+
+      {
+        //Creating for loop
+        const fruits = ["Mango", "Banana", "Jack Fruit", "Orange", "Apple", "Strawberry"]
+        let fLength =fruits.length;
+        
+        let text ="<ul>";
+          for(i = 0; i < fLength; i++){
+            text += "<li>" + fruits[i] + "</li>";
+          }
+          text += "</ul>";
+
+          document.getElementById("for-loop").innerHTML = text;
+          document.getElementById("for-loop").style.color = "red";
+          document.getElementById("for-loop").style.fontSize = "50px";
+      }
+      {
+        //Creating "arrayName.forEach()"function
+        const students =["Shawn", "Shain", "Bappy"];
+
+        let text = "<ul>";
+          students.forEach(id);
+          text +="</ul>;"
+          function id(value) {
+            text += "<li>" + value + "</li>"; 
+          }
+          document.getElementById("forEachFunction").innerHTML = text;
+      }
+      {
+        const dataOfCurrentTime =["Shawn is studying CSE", "Shain is studying LLB", "Unknown is studying EEE"];
+        let dLenght = dataOfCurrentTime.length;
+        //creating "for" loop
+        let text = "<ul>";
+          for(i = 0; i < dLenght; i++){
+            text += "<li>" + dataOfCurrentTime[i] + "</li>";
+          }
+          text += "</ul>";
+          document.getElementById("drop-for-loop").innerHTML = text;
+        
+      }
+
+      {
+        const ageOfFriends =["Shawn is 21 years old", "Shain is 22 years old", "Sharly and Shawn same age"];
+        let aLength = ageOfFriends.length;
+
+        let text = "<ul>";
+          for (a = 0; a < aLength; a++){
+            text += "<li>" + ageOfFriends[a] + "</li>";
+          }
+          text += "</ul>";
+
+          //now use this 'for' loop to the html file
+          document.getElementById("dropping-for-looping").innerHTML = text;
+
+      }
+
+      {
+        //forEach() function
+        const firstThings = ["Visit to Sudi Arab for Hazz with my whole family members", "Buy a good car","Travel all around the world"];
+
+        let newText = "<ul>";
+          firstThings.forEach(myFunction);
+          newText += "</ul>";
+          function myFunction(value) {
+            newText += "<li>" + value + "</li>";
+            
+          }
+          document.getElementById("dropped-forEach-function").innerHTML = newText;
+
+      }
+
+      {
+        const goFarAway =["I want to stay alone", "Don't want to marry anyone", "Life is better to be alone all time", "because no extra tension for anyone"];
+        let forEachText = "<ul>";
+          goFarAway.forEach(easyToSayButHardToDo);
+          forEachText += "</ul>";
+          function easyToSayButHardToDo(value) {
+            forEachText += "<li>" + value + "</li>";
+            
+          }
+
+          document.getElementById("last-forEach-function").innerHTML = forEachText;
+
+      }
+
+
+    {
+        {
+          const subjects = ["What things we going to learn in this current semeseter, Let's have a look"]
+          let sLength = subjects.length;
+
+          let unorderList = "<ul>";
+            //creating 'for' loop
+            for(s = 0; s < sLength; s++){
+              unorderList += "<li>" + subjects[s] + "</li>";
+            }
+            unorderList += "</ul>";
+
+            document.getElementById("subject-in-this-semester").innerHTML = unorderList;
+
+        }
+
+      
+      {
+        const thisSemester =["AI", "Algorithm", "Image Processing", "Speaking Chinese"];
+        let tLength = thisSemester.length;
+
+        let text = "<ol>";
+        for(t = 0; t < tLength; t++){
+          text += "<li>" + thisSemester[t] + "</li>";
+        }
+        text += "</ol>";
+        document.getElementById("again-for-loop").innerHTML = text;
+       
+      }
+
+    }
+
+    {
+      const discussion = ["But all that subjects not important to us", "We just need the basic knowladge of that subject", "Then all depend on us,if we want to work on that we can do that"];
+
+      let dLength = discussion.length;
+
+      let text = "<ul>";
+        for (d = 0; d < dLength; d++){
+          text += "<li>" + discussion[d] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("hello-world-js").innerHTML = text;
+    }
+
+    {
+      //Creating 'forEach' function
+      const happyJs = ["As a begginer it's hard to learn any programming language", "But after learning any programming language,your life will be changed", "And that moment you will feel proud"];
+
+      let text = "<ul>";
+      happyJs.forEach(myFunction);
+      text += "</ul>";
+
+      function  myFunction(value) {
+        text += "<li>" + value + "</li>";
+      }
+      document.getElementById("for-each-function-practice").innerHTML = text;
+    }
+
+    {
+      const againForEach = ["Let's have a fun", "I want to enjoy my life by following Quran sunnah"]
+      let text = "<ul>";
+        againForEach.forEach(helloJs);
+        text += "</ul>";
+
+        function helloJs(value) {
+          text += "<li>" + value + "</li>";         
+        }
+        document.getElementById("for-each-function-practices").innerHTML = text;
+    }
+
+
+
+
+    //Array Iteration
+    {
+      //Array.map() method
+      const dAge = [21, 23, 25];
+      let mDage =dAge.map(cToD);
+      function cToD(value,index,array){
+        return value * 2;
+      };
+      document.getElementById("personDoubleAge").innerHTML = mDage;
+
+    }
+    {
+      const p_name = [100, 90, 50];
+      let t_p_n = p_name.map(knowTop);
+      function knowTop(value,index,array){
+        return value * 2;
+      }
+      document.getElementById("topPname").innerHTML = t_p_n;
+      function sortMeAscending(){
+        t_p_n.sort(function(a,b){
+          return a - b;
+        });
+        document.getElementById("topPname").innerHTML = t_p_n;
+      };
+      function sortDeAscending(){
+        t_p_n.sort(function(a,b){
+          return b - a;
+        });
+        document.getElementById("topPname").innerHTML = t_p_n;
+      };
+    }
+
+    {
+      //Array.filter() method
+      const numbersF = [100,80,60,40,10,5,18];
+      let num = numbersF.filter(nNum);
+      function nNum(value,index,array){
+        return value > 18;
+      };
+      document.getElementById("No").innerHTML = num;
+    }
+    {
+      const distri = [400, 200, 100, 50, 25, 12.5, 6.25,3.125];
+      let dsT = distri.filter(mDis);
+      function mDis(value,index,array){
+        return value > 12.5;
+      }
+      document.getElementById("dis").innerHTML = dsT;
+    }
+
+
+
+      //string slice() method
+      //in "slice()" method we need to indicate starting point and ending point
+      //There for "slice()"method have two parameter.
+      {
+        let x = "Hi guys,I'm Shawn, I live in China for 2years";
+        document.getElementById("hola").innerHTML = x;
+
+        function Hi(){
+          let x = "Hi guys,I'm Shawn, I live in China for 2years";
+          document.getElementById("hola").innerHTML = x.slice(0,17); 
+        }
+
+        function hablu(){
+          let y = "Hi guys,I'm Shawn, I live in China for 2years";
+          document.getElementById("hola").innerHTML = y.slice(19,45); 
+        }
+        function pablo(){
+          let z = "Hi guys,I'm Shawn, I live in China for 2years";
+          document.getElementById("hola").innerHTML = z.slice(0);
+          
+        }
+      }
+       
+       // string"toUpperCase()"method below.
+       function hola(){
+         let x = document.getElementById("makingToUpperCase").innerHTML;
+         document.getElementById("makingToUpperCase").innerHTML = x.toUpperCase();
+       }
+       // string "toLowerCase",method below
+       function bokachoda(){
+         let y = document.getElementById("makingToUpperCase").innerHTML;
+         document.getElementById("makingToUpperCase").innerHTML = y.toLowerCase();
+       }
+
+      
+
+      //string "replace()" method
+
+      function helloWorld() {
+        let text = document.getElementById("hello-world").innerHTML;
+        document.getElementById("hello-world").innerHTML = text.replace("Microsoft","w3school"); //string "replace()" method
+      }
+      function backToPrevious() {
+        let hola = document.getElementById("hello-world").innerHTML;
+        document.getElementById("hello-world").innerHTML = hola.replace("w3school","Microsoft"); 
+      }
+
+      // The "concat()"method
+      {
+        let x ="What to say!";
+        let y =" I don't know";
+        let z = x.concat("",y); // let z = x + "" + y; ( we can use one of them, to add two string together)
+        document.getElementById("concat").innerHTML = z;
+      }
+       
+       //JS string methods
+       {
+         let str = "Apple, Banana, Kiwi";
+         console.log(str.slice(0, 5));
+         console.log(str.slice(7, 13));
+         console.log(str.slice(15));
+         console.log(str.length);
+         console.log(typeof str);
+         document.getElementById("slice").innerHTML = "Hi there,"+" Shawn loves to eat " +
+          str.slice(7,13) + " but he don't often eat it,when he feel he need to eat that time he eat.";
+       }
+       {
+         let start = "How to start JS,it's sting slice part?, how to start python?,";
+         console.log(start.length);
+         console.log(start.slice(0,38));
+         console.log(typeof start, start.length); //we can check type of data and the length in the same line
+       }
+
+        //Functional heading area,creating variable with the function
+        function heading(a,b){
+            return a - b;
+        }
+        let A = heading(4, 3);
+        document.getElementById("hello_world").innerHTML = "For heading"+ A +",we created functional speech";
+
+
+
+      function toCelsius(f) {
+        return (5 / 9) * (f - 32);
+      }
+     // document.getElementById("demo").innerHTML = toCelsius(77);
+     let xu = toCelsius(77);
+     document.getElementById("demo").innerHTML = "The temperature is " + xu + " Celsius";
+
+     // Trying to figure out something in function.
+
+     function check(sudo,pack){
+         console.log("Can I make a variable with this function?");
+         return sudo + pack;
+     }
+     check();
+     let check1 = check(18, 3); // creating variable with the function
+
+     //now trying to call that variable inside html file
+     document.getElementById("check").innerHTML = "Hi guys,I'm " + check1 + " years old, am I too old?";
+     {
+    function noob() {
+        let noob ="ki holo,baal flaow";
+        console.log(noob);
+        return "sov noob";  
+    }
+    noob();
+    let noobOpps = noob();
+    document.getElementById("noob-coders").innerHTML = "sov mittha khota " + noobOpps + " sov hablo";
+}
+
+
+
+
+      {
+        let x, y, z;
+        x = 5;
+        y = x + 10;
+        z = x + y;
+        //below I'm going to findout the result and the typeof data
+        console.log(z);
+
+        //now going to show you typeof data
+
+        console.log(typeof z);
+      }
+      //try to create a window warning below
+
+      //window.alert("404 server not found");
+
+      //print this page
+      //window.print();
+
+      function html() {
+        let x = "Hello world";
+        console.log(x);
+        console.log(typeof x);
+      }
+      html();
+
+      {
+        const owner = ["Shawn", "Shain", "Kobi"];
+        owner.push("Yeasin");
+        owner[1] = "Niamul";
+        owner.pop();
+        //owner.reverse();
+        owner.shift();
+        console.log(owner);
+        console.log(typeof owner);
+      }
+
+      //creating my own data const variable
+      
+          const identity = {
+
+            FirstName: "MD Niamul",
+            LastName:"Hakim",
+            NickName:"Shawm",
+            FullName:"MD Niamul Hakim Shawn.",
+            Age: 21,
+            Profession: "Student",
+            Subject: "Computer Science & Technology",
+            University:"Southwest Forestry University",
+            Country:"China",
+            StudentId: function(){
+                console.log("Roll: 201901008");
+            },
+            MotivationSpeech: function(){
+                console.log("Never give up");
+            }
+
+          };
+          //Now we're going to check the result 
+          console.log(identity.FirstName);
+          console.log(identity.FullName);
+          identity.StudentId();
+          document.getElementById("stack").innerHTML = "My name is " + 
+          identity.FullName + " Thanks for checking my information";
+
+          //here I'm going to create another  object variable
+
+          const person_1 = {
+              firstName : 'John',
+              lastName : 'Doe',
+              id : 5566,
+              FullName : function(){
+                  console.log('useerPass: 22129');
+                  return this.firstName + '' + this.lastName;
+              }
+          }
+          person_1.FullName();
+          console.log(person_1.firstName);
+          document.getElementById('demo1').innerHTML = person_1.FullName();
+
+          // Creating a object type data for Southwest Forestry University
+
+          const university = {
+            Institution: "Southwest Forestry University",
+            NumberOfStudents: 30000,
+            UnderGraduateStudents: 25000,
+            TopSubject: "Forestry",
+            AvailableStudents: "2k",
+            schoolStartTime: function(StudentName, department_name, morning_time, noon_time, evening_time){
+              console.log("Hi,I'm "+StudentName+ " studying " +department_name +" \nMy morning first class start from "+morning_time+
+               " and having lunch break at 11.50AM, then we prepare for next class and it's begin at "+noon_time+
+               "After finishing noon class allmost all of us little bit tired then we all are looking for some cool drinks."+evening_time+
+               " some of us have class but most of the students don't like to join that class because of all need to take rest" )  
+               return 'Hi, I\'m Shawn, studying CSE at '+ this.Institution;  
+            },
+            aboutMe: function() {
+              return  'Hi, I\'m Shawn, studying CSE at '+ this.Institution;   
+            }
+          };
+          university.schoolStartTime("Shawn", "\"Computer Science & Technology\".", "8AM","2PM."," At 6PM");
+         // university.schoolStartTime("Chagol", "'Environment Science'.", "9AM","1PM."," At 5PM");
+          document.getElementById('student').innerHTML = university.aboutMe();
+
+      
+
+
+    </script>
+    <script src="test.js"></script>
+    <script src="Arrays.js"></script>
+
+  </body>
+</html>

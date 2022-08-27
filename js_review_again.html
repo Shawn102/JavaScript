@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js review again</title>
+  </head>
+  <body>
+    <h1>JavaScript practice again from w3school.</h1>
+    <button
+      onclick="dateShow()"
+      style="
+        border: 5px solid rgb(78, 1, 1);
+        border-radius: 5px;
+        background: gold;
+      "
+    >
+      Click me to see the time and date
+    </button>
+    <button
+      onclick="block()"
+      id="date"
+      style="
+        border: 5px solid rgb(78, 1, 1);
+        border-radius: 5px;
+        background: gold;
+      "
+    >
+      click to hide time and date
+    </button>
+    <p id="dates"></p>
+    <button
+      id="fc"
+      onclick="ale()"
+      style="
+        border: 5px solid rgb(78, 1, 1);
+        border-radius: 5px;
+        background: gold;
+      "
+    >
+      don't click
+    </button>
+    <h2 id="just" style="color: red"></h2>
+    <h1 class="shawn" id="h12"></h1>
+    <h6 class="shawn" id="h66"></h6>
+    <h2 id="h22"></h2>
+    <h2 id="h23"></h2>
+    <button onclick="counter()">Count</button>
+    <p id="doIt">0</p>
+    <h1 id="asy"></h1>
+    <p class="shawn" id="demo1"></p>
+    <img src="img/light-off.png" id="imageOfJs">
+    <script>
+      {
+        const changingAttribute = document.getElementById("imageOfJs");
+        changingAttribute.src = 'img/light_on.png';
+        // console.dir(changingAttribute);
+      }
+      let d = new Date();
+      let dateShow = function () {
+        document.getElementById("dates").innerHTML = d;
+      };
+      let block = function () {
+        document.getElementById("dates").style.display = "none";
+      };
+      let ale = function () {
+        window.alert("Fuck you!");
+      };
+      const _no = "shawn";
+      const $name = "Hao Jia";
+      document.getElementById("just").innerHTML = _no + ", " + $name;
+      {
+        let myCar = {
+          carName: "Bmw",
+          model: 2018,
+          carWeight: "1300kg",
+          carColor: "White",
+          $carSpeed: function () {
+            console.log(`${this.carName} top speed is 300km/h.`);
+          },
+        };
+        console.log(myCar.carName);
+        console.log(myCar["carColor"]);
+        myCar.$carSpeed();
+      }
+      //Creating object for practice for in loop
+      const shawn = {
+        fullName: " MD Niamul Hakim Shawn",
+        age: 22,
+        fuckedUp: function () {
+          return `Don't like selfish people.`;
+        },
+      };
+      delete shawn.fuckedUp;
+      console.log(shawn);
+      let txt = "";
+      for (let x in shawn) {
+        txt += shawn[x];
+      }
+      document.getElementById("h12").innerHTML = txt;
+
+      //Creating nested object
+      const myObj = {
+        name: "Shawn",
+        age: 22,
+        cars: [
+          { name: "Ford", models: ["Fiest", "Focus", "Mustang"] },
+          { name: "Bmw", models: ["320", "X3", "X5"] },
+          { name: "Fiat", models: ["500", "Panda"] },
+        ],
+      };
+      console.log(myObj);
+      console.log(myObj.cars[1]);
+      console.log(myObj.cars[2].models[0]);
+      let x = "";
+      for (let i in myObj.cars) {
+        // console.log(myObj.cars[i]);
+        // for(let j in myObj.cars[i].models) {
+        //   console.log(myObj.cars[i].models[j])
+        // }
+        x += "<h6>" + myObj.cars[i].name;
+        +"<h6>";
+        for (let j in myObj.cars[i].models) {
+          x += myObj.cars[i].models[j];
+        }
+      }
+      //Addding a method to "myObj" out side of the object
+      document.getElementById("h66").innerHTML = x;
+      myObj.ShawnDetails = function () {
+        return this.name;
+      };
+      console.log(myObj);
+      console.log(myObj.ShawnDetails());
+
+      // Below more object practice
+      const person = {
+        name: "John",
+        age: 30,
+        city: "New York",
+        time: new Date(),
+      };
+
+      let displayToHtlm = "";
+      for (let i in person) {
+        displayToHtlm += person[i] + " ";
+      }
+      document.getElementById("h22").innerHTML = displayToHtlm;
+
+      //Another way to displaying an object property using built-in method "Object.values()"
+      //After converting object to an array we can iterate through new array using "for of" loop
+      let convertingObjectToAnArray = Object.values(person);
+      for (let i of convertingObjectToAnArray) {
+        console.log(i);
+      }
+      ///Another way to display JavaScript object is using built-in "JSON.stringify()" method
+      //This method convert JavaScript Object to String
+      let convertingToString = JSON.stringify(person);
+      console.log(convertingToString);
+      document.getElementById("h23").innerHTML = convertingToString;
+
+      {
+        const person = {
+          name: "John",
+          age: function () {
+            return 30;
+          },
+        };
+        person.age = person.age.toString();
+        console.log(JSON.stringify(person));
+      }
+      {
+        let Person = function (first, last, age) {
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.fullName = function () {
+            return this.firstName + " " + this.lastName;
+          };
+        };
+        Person.prototype.Nationality = "Bangladeshi";
+        console.dir(Person);
+
+        const unknown = new Person("MD", "Risk", 25);
+        console.log(unknown.Nationality);
+        console.log(unknown.fullName());
+
+        const shawn = new Person("MD Niamul Hakim", "Shawn", 22);
+        console.log(`Shawn nationality is ${shawn.Nationality}`);
+      }
+
+      {
+        //Creating iterable
+        const shawn = ["Shawn", "Single", 22];
+        console.dir(shawn);
+        let myString = "MD Niamul Hakim Shawn";
+        console.dir(String);
+        //How can JavaScript know something that a Iterator?
+        //This only possible because of "built-in JavaScript prototype"
+        //And this prototype name is "Symbol(Symbol.iterator)"
+        //Which object have this "prototype property", you can say: it's a iterator object
+      }
+
+      {
+        let nums = [100, 200, 300];
+        console.dir(nums[Symbol.iterator]);
+        console.dir(nums[Symbol.iterator]());
+
+        //Creating one more variable
+        let numIterator = nums[Symbol.iterator]();
+        console.log(numIterator.next());
+        console.log(numIterator.next());
+        console.log(numIterator.next());
+        console.log(numIterator.next());
+      }
+
+      {
+        //Creatin JavaScript iterator using "Symbol.iterator" property
+        let numberArray = [1, 5, 6, 1, 3];
+        let numIterator = numberArray[Symbol.iterator]();
+        console.log(numIterator.next());
+        console.log(numIterator.next());
+      }
+
+      {
+        //Creating a array
+        const myNumArray = [100, 5, 2, 4];
+        //Create a new iterator with this array
+        const myIterator = myNumArray[Symbol.iterator]();
+        console.log(myIterator.next());
+        console.log(myIterator.next());
+        console.log(myIterator.next());
+        console.log(myIterator.next());
+        console.log(myIterator.next());
+      }
+
+      {
+        //Creating an object
+        const myObject = {};
+        //making it iterable
+        myObject[Symbol.iterator] = function () {
+          let n = 0;
+          let done = false;
+          return {
+            next() {
+              n += 10;
+              if (n == 60) {
+                done = true;
+              }
+              return {
+                value: n,
+                done: done,
+              };
+            },
+          };
+        };
+        //now we can iterate this object using "for of" loop
+        for (let x of myObject) {
+          console.log(x);
+        }
+      }
+      {
+        //Practicing "getter and setter"
+        let myObjPerson = {
+          fName: "Niamul Hakim",
+          lName: "Shawn",
+          n: "",
+          get fullName() {
+            return this.fName + " " + this.lName;
+          },
+          set na(value) {
+            return (this.n = value);
+          },
+        };
+        console.log(myObjPerson);
+        console.dir(myObjPerson);
+        console.log(myObjPerson.fullName);
+        myObjPerson.na = "Bangladeshi";
+        console.log(myObjPerson.n);
+        console.dir(myObjPerson);
+      }
+      {
+        //JavaScript Object Constructors
+        //It is considered good practice to name constructor functions with an upper-case first letter.
+        //Sometimes we need a "blueprint" for creating many objects of the same "type".
+      }
+
+      {
+        //Self-invoking function syntax
+        (function () {
+          console.log("Hi, there!");
+        })();
+      }
+
+      //JavaScript Closures
+      let myClosures = function () {
+        let count = 0;
+        return function () {
+          count += 1;
+          return count;
+        };
+      };
+      let mCl = myClosures();
+      let counter = function () {
+        document.getElementById("doIt").innerHTML = mCl();
+      };
+      let ClosuresFunction = function () {
+        let counter = 0;
+        return function () {
+          counter += 1;
+          return counter;
+        };
+      };
+      let add = ClosuresFunction();
+      add();
+      add();
+      console.dir(add);
+
+      {
+        const stt = setInterval(myTimer, 1);
+        function myTimer() {
+          let d = new Date();
+          document.getElementById(
+            "asy"
+          ).innerHTML = `Time ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMilliseconds()}`;
+        }
+      }
+
+      {
+        let pOfDoc = document.getElementById("demo1");
+        pOfDoc.innerHTML = "Shawn walking";
+      }
+    </script>
+  </body>
+</html>

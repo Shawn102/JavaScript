@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM practice</title>
+  </head>
+  <body>
+    <h1>HTML DOM practice:-</h1>
+    <h3>
+      Finding HTML Elements:
+      <ul>
+        <li>getElementById()</li>
+        <li>getElementsByTagName()</li>
+        <li>getElementsByClassName()</li>
+        <li>querySelector()</li>
+        <li>
+          Finding HTML Elements by HTML Object Collections
+          <ol>
+            <li>document.anchors</li>
+            <li>document.body</li>
+            <li>document.documentElement</li>
+            <li>document.embeds</li>
+            <li>document.forms</li>
+            <li>document.head</li>
+            <li>document.images</li>
+            <li>document.links</li>
+            <li>document.scripts</li>
+            <li>document.title</li>
+          </ol>
+        </li>
+      </ul>
+    </h3>
+    <!-- Html form validation using "DOM" -->
+    <h2>1. Html form text validation using "DOM"</h2>
+    <form id="form1" action="" onsubmit="return formValidationText()">
+      <label for="name">Name:</label>
+      <input name="yourName" type="text" />
+      <input type="submit" value="submit" />
+    </form>
+    <!-- One more form validation, numeric input validation -->
+    <h2>2. Html form password validation using "DOM"</h2>
+    <form id="form2" action="" onsubmit="return formValidationPassword()">
+      <label for="pass">Passowrd:</label>
+      <input type="password" name="yourPassword" />
+      <input type="submit" value="submit" />
+    </form>
+    <!-- This "p" tag for title checking -->
+    <p id="title_Checking"></p>
+    <button class="button" onclick="lighOn()">ON</button>
+    <button id="button" onclick="lightOff()">OFF</button>
+    <img
+      id="imageOfLight"
+      src="img/light-off.png"
+      style="
+        width: 100%;
+        height: 300px;
+        border-radius: 100%;
+        object-fit: contain;
+      "
+    />
+    <!-- JS animation part -->
+    <h4>Animation area:</h4>
+    <div>
+      <div
+        id="container"
+        style="
+          width: 450px;
+          height: 450px;
+          position: relative;
+          background-color: gold;
+        "
+      >
+        <div
+          id="animationBox"
+          style="
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+            border-radius: 50px;
+            text-align: center;
+          "
+        >
+          1
+        </div>
+        <div
+          id="animationBox2"
+          style="
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            background-color: rgb(0, 64, 160);
+            border-radius: 50px;
+            text-align: center;
+          "
+        >
+          2
+        </div>
+        <div
+          id="myMoveAnimation"
+          style="
+            width: 50px;
+            height: 50px;
+            background-color: rgb(39, 231, 0);
+            border-radius: 50px;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+          "
+        >
+          3
+        </div>
+        <div
+          id="myMoveAnimation2"
+          style="
+            width: 50px;
+            height: 50px;
+            background-color: rgb(150, 0, 236);
+            border-radius: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+          "
+        >
+          4
+        </div>
+        <div
+          id="myMovAnimation5"
+          style="
+            background-color: skyblue;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            border-radius: 25px;
+            text-align: center;
+          "
+        >
+          5
+        </div>
+        <div
+          id="myMovAnimation6"
+          style="
+            background-color: rgb(239, 182, 253);
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 220px;
+            left: 220px;
+            border-radius: 25px;
+            text-align: center;
+          "
+        >
+          6
+        </div>
+      </div>
+      <button
+        onclick="animation()"
+        style="background: red; height: 50px; border-radius: 50px"
+      >
+        Animate the box1
+      </button>
+      <button
+        onclick="animation2()"
+        style="background: red; height: 50px; border-radius: 50px"
+      >
+        Animate the box2
+      </button>
+    </div>
+    <!-- one more animation box -->
+    <button onclick="animation3()">Click to see animation move 3</button>
+    <button onclick="animation4()">Click to see animation move 4</button>
+    <button onclick="myWidthAnimaTion()">Click to see width animation 5</button>
+    <button onclick="mySizeIncreseAni()">Click to see resize of 6</button>
+    <button id="button6" style="background: red; height: 50px; border-radius: 50px">All the animation at the same time</button>
+
+    <!-- DOM Events  -->
+    <h3 onclick="this.innerHTML = 'Opps!'">Click me</h3>
+    <button class="buttonForEvent" id="buttonForEvent">Hello there :)</button>
+    <form id="form4">
+      <label for="en">UpperCase Input:</label>
+      <input type="text"  id="upperCase">
+    </form>
+    <form action="" id="form5">
+      <label for="">LowerCase input: </label>
+        <input type="text" id="inputLowerCase">
+    </form>
+    <form action="" id="form6">
+      <label for="">Removing Blank Space:</label>
+      <input type="text" id="trim">
+    </form>
+    <button id="multipleAlert">Multiple Alert Button</button>
+    <h2>Again form validation practice</h2>
+    <form action="#" id="form7">
+      <label for="#">Input Valid Number:</label>
+      <input type="password" placeholder="At least 8 digit required" id="formVal">
+      <input type="submit" placeholder="submit">
+    </form>
+    <p id="resTex">Input validation result will be shown here as text.</p>
+    <p id="accessNodeText">Hello,first child node;</p>
+    <p id="printNodeText"></p>
+
+    <!-- DOM Nodes -->
+    <div id="divOfAppend">
+      <p id="p1">Hello1</p>
+      <p id="p2">Hello2</p>
+      <p id="p3">Hello3</p>
+      <p id="p4">Hello4</p>
+      <p id="p5">Hello5</p>
+      <p id="p6">Hello6</p>
+    </div>
+    <script defer="true" src="htmlDom.js"></script>
+  </body>
+</html>
